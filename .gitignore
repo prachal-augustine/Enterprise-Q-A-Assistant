@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+backend/.env
+**/data/uploads/
+**/data/chroma_db/
+**/data/users_db/
+*.db
+.DS_Store
+.claude/
+pdfs/

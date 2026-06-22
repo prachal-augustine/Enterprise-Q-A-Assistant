@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 660" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="820" height="660" fill="#ffffff"/>
+
+  <text x="410" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e1e1e">Enterprise Document Q&amp;A Assistant - Architecture</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <!-- Browser -->
+  <rect x="310" y="70" width="200" height="56" rx="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+  <text x="410" y="104" text-anchor="middle" font-size="16" fill="#1971c2" font-weight="bold">Browser (User)</text>
+
+  <!-- arrow -->
+  <line x1="410" y1="126" x2="410" y2="182" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="420" y="160" font-size="12" fill="#868e96">HTTP requests</text>
+
+  <!-- Streamlit -->
+  <rect x="250" y="184" width="320" height="64" rx="10" fill="#fff3bf" stroke="#e67700" stroke-width="2"/>
+  <text x="410" y="210" text-anchor="middle" font-size="16" fill="#e67700" font-weight="bold">Streamlit Frontend</text>
+  <text x="410" y="232" text-anchor="middle" font-size="13" fill="#b35900">Login · Upload · Chat  (port 8501)</text>
+
+  <!-- arrow -->
+  <line x1="410" y1="248" x2="410" y2="304" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="420" y="282" font-size="12" fill="#868e96">REST API + JWT token</text>
+
+  <!-- FastAPI -->
+  <rect x="250" y="306" width="320" height="64" rx="10" fill="#d3f9d8" stroke="#2b8a3e" stroke-width="2"/>
+  <text x="410" y="332" text-anchor="middle" font-size="16" fill="#2b8a3e" font-weight="bold">FastAPI Backend</text>
+  <text x="410" y="354" text-anchor="middle" font-size="13" fill="#207a33">Auth · Ingestion · Retrieval · Q&amp;A  (port 8000)</text>
+
+  <!-- three branches -->
+  <line x1="360" y1="370" x2="150" y2="470" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="410" y1="370" x2="410" y2="470" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="460" y1="370" x2="670" y2="470" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- SQLite -->
+  <rect x="40" y="472" width="210" height="74" rx="10" fill="#f3d9fa" stroke="#862e9c" stroke-width="2"/>
+  <text x="145" y="502" text-anchor="middle" font-size="15" fill="#862e9c" font-weight="bold">SQLite</text>
+  <text x="145" y="524" text-anchor="middle" font-size="12" fill="#6741a5">Users &amp; document metadata</text>
+
+  <!-- Chroma -->
+  <rect x="305" y="472" width="210" height="74" rx="10" fill="#f3d9fa" stroke="#862e9c" stroke-width="2"/>
+  <text x="410" y="502" text-anchor="middle" font-size="15" fill="#862e9c" font-weight="bold">Chroma</text>
+  <text x="410" y="524" text-anchor="middle" font-size="12" fill="#6741a5">Vector store (embeddings)</text>
+
+  <!-- Ollama -->
+  <rect x="570" y="472" width="210" height="74" rx="10" fill="#dee2e6" stroke="#343a40" stroke-width="2"/>
+  <text x="675" y="502" text-anchor="middle" font-size="15" fill="#343a40" font-weight="bold">Ollama (local LLM)</text>
+  <text x="675" y="524" text-anchor="middle" font-size="12" fill="#495057">llama3.2:3b</text>
+
+  <!-- footnote -->
+  <text x="410" y="600" text-anchor="middle" font-size="12" fill="#868e96">Embeddings: sentence-transformers (bge-small) · Reranker: ms-marco MiniLM · all runs locally, no paid APIs</text>
+</svg>
